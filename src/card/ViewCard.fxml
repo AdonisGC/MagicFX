@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="card.MainController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <RadioButton mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Red" />
+                  <Separator orientation="VERTICAL" />
+                  <RadioButton mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Blue" />
+                  <Separator orientation="VERTICAL" />
+                  <RadioButton mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Green" />
+                  <Separator orientation="VERTICAL" />
+                  <RadioButton mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Black" />
+                  <Separator orientation="VERTICAL" />
+                  <RadioButton mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="White" />
+                  <Separator orientation="VERTICAL" />
+                  <Label text="Filter card by colors" />
+               </items>
+            </ToolBar>
+         </bottom>
+         <top>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <ComboBox fx:id="rarity" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" promptText="Rarity" style="-fx-background-radius: 0;" />
+                  <Separator orientation="VERTICAL" />
+                  <Label text="Filter cards by rarity" />
+               </items>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ToolBar>
+         </top>
+         <right>
+            <ListView fx:id="cardList" prefHeight="510.0" prefWidth="260.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </ListView>
+         </right>
+         <center>
+            <GridPane prefWidth="370.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ScrollPane fx:id="sCrollPanel" fitToWidth="true" focusTraversable="false" hvalue="0.24" pickOnBounds="false" prefHeight="359.0" prefWidth="613.0" style="-fx-background-color: #000000;" GridPane.rowIndex="1">
+                     <content>
+                        <VBox mouseTransparent="true" style="-fx-background-color: #000000;">
+                           <children>
+                              <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" style="-fx-background-color: #000000;" text="Name" wrapText="true">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TitledPane>
+                            <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" text="Text" wrapText="true">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <children>
+                                          <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="--" textAlignment="JUSTIFY" wrappingWidth="304.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                            </TitledPane>
+                              <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" text="Type" wrapText="true">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="type" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" text="Rarity" wrapText="true">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="nRarity" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" text="Colors" wrapText="true">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="colors" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                              <TitledPane animated="false" collapsible="false" focusTraversable="false" mouseTransparent="true" text="Power" wrapText="true">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="power" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                              <TitledPane collapsible="false" mouseTransparent="true" text="Toughness" wrapText="true">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="toughness" strokeType="OUTSIDE" strokeWidth="0.0" text="--" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="275.978515625" AnchorPane.topAnchor="4.0">
+                                             <font>
+                                                <Font name="Calibri Light" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </ScrollPane>
+                  <Rectangle id="squareMask" fx:id="squareMask" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
